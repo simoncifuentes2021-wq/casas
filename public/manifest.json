@@ -1,0 +1,10 @@
+{
+  "name": "Casas BAE",
+  "short_name": "Casas BAE",
+  "description": "Casas personalizadas y prefabricadas en Victoria, Región de La Araucanía.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F7F2",
+  "theme_color": "#07100D",
+  "lang": "es-CL"
+}
