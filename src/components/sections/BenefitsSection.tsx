@@ -1,5 +1,7 @@
 import { BadgeCheck, Handshake, MapPinned, PencilRuler } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { CarouselHint } from "@/components/ui/CarouselHint";
+import { Reveal } from "@/components/ui/Reveal";
 
 const benefits = [
   {
@@ -28,13 +30,15 @@ export function BenefitsSection() {
   return (
     <section className="overflow-hidden bg-white py-16 md:py-20">
       <div className="container-page">
-        <SectionHeader
-          eyebrow="Beneficios"
-          title="Una forma clara de avanzar hacia tu casa"
-          description="Te acompañamos desde la elección del modelo hasta la personalización de los espacios, sin promesas infladas ni letra chica comercial."
-        />
+        <Reveal>
+          <SectionHeader
+            eyebrow="Beneficios"
+            title="Una forma clara de avanzar hacia tu casa"
+            description="Te acompañamos desde la elección del modelo hasta la personalización de los espacios, sin promesas infladas ni letra chica comercial."
+          />
+        </Reveal>
         <div className="mt-10 md:mt-12">
-          <div className="hidden gap-5 md:grid md:grid-cols-2 lg:grid-cols-4">
+          <Reveal className="hidden gap-5 md:grid md:grid-cols-2 lg:grid-cols-4">
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
@@ -45,13 +49,13 @@ export function BenefitsSection() {
                 </article>
               );
             })}
-          </div>
+          </Reveal>
 
-          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
+          <div className="mobile-carousel mobile-carousel-white no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
-                <article key={benefit.title} className="min-w-[78vw] snap-start rounded-lg border border-ink/[0.08] bg-warm p-5 shadow-soft sm:min-w-[46vw]">
+                <article key={benefit.title} className="min-w-[74vw] snap-start rounded-lg border border-ink/[0.08] bg-warm p-5 shadow-soft sm:min-w-[42vw]">
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-white text-forest shadow-sm">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </span>
@@ -61,7 +65,7 @@ export function BenefitsSection() {
               );
             })}
           </div>
-          <p className="mt-1 text-center text-xs font-semibold text-muted md:hidden">Desliza para revisar beneficios</p>
+          <CarouselHint label="Desliza para revisar beneficios" />
         </div>
       </div>
     </section>

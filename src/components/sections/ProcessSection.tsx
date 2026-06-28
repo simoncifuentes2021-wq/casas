@@ -3,6 +3,7 @@
 import { ClipboardCheck, Hammer, Home, MessageCircle, Ruler, Settings } from "lucide-react";
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { CarouselHint } from "@/components/ui/CarouselHint";
 
 const steps = [
   { title: "Nos contactas", icon: MessageCircle },
@@ -23,7 +24,7 @@ export function ProcessSection() {
           description="Te guiamos paso a paso para que cada avance tenga sentido técnico, comercial y familiar."
         />
         <div className="mt-10 md:mt-12">
-          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
+          <div className="mobile-carousel no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
@@ -33,7 +34,7 @@ export function ProcessSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.04 }}
-                  className="min-w-[72vw] snap-start rounded-lg bg-white p-6 shadow-soft sm:min-w-[42vw]"
+                  className="min-w-[68vw] snap-start rounded-lg bg-white p-6 shadow-soft sm:min-w-[40vw]"
                 >
                   <span className="text-sm font-black text-brand">0{index + 1}</span>
                   <Icon className="mt-5 h-8 w-8 text-forest" aria-hidden="true" />
@@ -42,7 +43,7 @@ export function ProcessSection() {
               );
             })}
           </div>
-          <p className="mt-1 text-center text-xs font-semibold text-muted md:hidden">Desliza para ver el proceso</p>
+          <CarouselHint label="Desliza para ver el proceso" />
 
           <div className="hidden gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
           {steps.map((step, index) => {

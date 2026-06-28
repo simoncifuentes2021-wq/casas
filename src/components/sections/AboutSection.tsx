@@ -1,6 +1,7 @@
 import { BadgeCheck, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
 
 const trustPoints = [
   { label: "Atención directa", icon: MessageCircle },
@@ -12,7 +13,7 @@ export function AboutSection({ full = false }: { full?: boolean }) {
   return (
     <section className="bg-white py-20 md:py-24">
       <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <div className="rounded-lg bg-ink p-6 text-white shadow-premium md:p-8">
+        <Reveal className="rounded-lg bg-ink p-6 text-white shadow-premium md:p-8">
           <SectionHeader
             align="left"
             tone="dark"
@@ -31,9 +32,9 @@ export function AboutSection({ full = false }: { full?: boolean }) {
               );
             })}
           </div>
-        </div>
+        </Reveal>
 
-        <div className="text-base leading-8 text-muted">
+        <Reveal className="text-base leading-8 text-muted" delay={0.08}>
           <div className="rounded-lg border border-ink/[0.08] bg-warm p-6 shadow-soft md:p-8">
             <p>
               Nuestro objetivo es entregar soluciones habitacionales accesibles, funcionales y adaptadas a cada familia, combinando experiencia, materiales de calidad y atención directa durante todo el proceso.
@@ -57,7 +58,7 @@ export function AboutSection({ full = false }: { full?: boolean }) {
               </div>
             )}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

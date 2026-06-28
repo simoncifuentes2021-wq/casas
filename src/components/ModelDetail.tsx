@@ -5,6 +5,8 @@ import { modelWhatsappUrl } from "@/lib/whatsapp";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { Button } from "@/components/ui/Button";
 import { ModelCard } from "@/components/ui/ModelCard";
+import { CarouselHint } from "@/components/ui/CarouselHint";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function ModelDetail({
   model,
@@ -82,9 +84,21 @@ export function ModelDetail({
             <p className="text-xs font-black uppercase tracking-[0.18em] text-forest">Ficha técnica</p>
             <h2 className="mt-3 text-3xl font-black text-ink md:text-4xl">Qué contempla</h2>
           </div>
-          <div className="no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
+          <div className="rounded-lg border border-ink/[0.08] bg-mist p-5 md:hidden">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-forest">Resumen técnico</p>
+            <div className="mt-4 grid gap-3">
+              {projectIncludes.slice(0, 4).map((item) => (
+                <div key={item} className="flex gap-3 text-sm font-semibold leading-6 text-ink">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mobile-carousel mobile-carousel-white no-scrollbar -mx-4 mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
             {projectIncludes.map((item) => (
-              <div key={item} className="min-w-[72vw] snap-start rounded-lg border border-ink/[0.08] bg-mist p-4 text-sm font-semibold leading-6 text-ink sm:min-w-[42vw]">
+              <div key={item} className="min-w-[66vw] snap-start rounded-lg border border-ink/[0.08] bg-mist p-4 text-sm font-semibold leading-6 text-ink sm:min-w-[38vw]">
                 <span className="mb-3 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-white text-brand shadow-sm">
                   <Check className="h-4 w-4" aria-hidden="true" />
                 </span>
@@ -92,9 +106,9 @@ export function ModelDetail({
               </div>
             ))}
           </div>
-          <p className="mt-1 text-center text-xs font-semibold text-muted md:hidden">Desliza para ver la ficha técnica</p>
+          <CarouselHint label="Desliza para ver la ficha técnica" />
 
-          <div className="mt-8 hidden gap-3 md:grid md:grid-cols-2 lg:grid-cols-3">
+          <Reveal className="mt-8 hidden gap-3 md:grid md:grid-cols-2 lg:grid-cols-3">
             {projectIncludes.map((item) => (
               <div key={item} className="flex min-h-16 gap-3 rounded-lg border border-ink/[0.08] bg-mist p-4 text-sm font-semibold leading-6 text-ink">
                 <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-white text-brand shadow-sm">
@@ -103,7 +117,7 @@ export function ModelDetail({
                 {item}
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -126,13 +140,14 @@ export function ModelDetail({
       <section className="overflow-hidden bg-warm py-14 md:py-20">
         <div className="container-page">
           <h2 className="text-3xl font-black text-ink">Modelos relacionados</h2>
-          <div className="no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
+          <div className="mobile-carousel no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
             {related.map((item) => (
-              <div key={item.slug} className="min-w-[84vw] snap-start sm:min-w-[48vw]">
+              <div key={item.slug} className="min-w-[78vw] snap-start sm:min-w-[44vw]">
                 <ModelCard model={item} />
               </div>
             ))}
           </div>
+          <CarouselHint label="Desliza para ver relacionados" />
           <div className="mt-8 hidden gap-6 md:grid md:grid-cols-3">
             {related.map((item) => (
               <ModelCard key={item.slug} model={item} />

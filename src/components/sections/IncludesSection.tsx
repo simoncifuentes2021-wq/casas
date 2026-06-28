@@ -1,6 +1,8 @@
 import { Check, FileCheck2, Hammer, Layers3 } from "lucide-react";
 import { projectIncludes } from "@/data/models";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { CarouselHint } from "@/components/ui/CarouselHint";
+import { Reveal } from "@/components/ui/Reveal";
 
 const highlights = [
   { title: "Base constructiva", description: "Radier, estabilizado y estructura base definida.", icon: Layers3 },
@@ -14,12 +16,14 @@ export function IncludesSection() {
       <div className="container-page">
         <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div>
-            <SectionHeader
-              align="left"
-              eyebrow="Ficha técnica"
-              title="Qué contempla el proyecto"
-              description="Estas especificaciones generales sirven como base de conversación para evaluar el modelo y las personalizaciones que necesites."
-            />
+            <Reveal>
+              <SectionHeader
+                align="left"
+                eyebrow="Ficha técnica"
+                title="Qué contempla el proyecto"
+                description="Estas especificaciones generales sirven como base de conversación para evaluar el modelo y las personalizaciones que necesites."
+              />
+            </Reveal>
             <div className="mt-8 hidden gap-3 md:grid">
               {highlights.map((item) => {
                 const Icon = item.icon;
@@ -35,11 +39,23 @@ export function IncludesSection() {
           </div>
 
           <div className="md:hidden">
-            <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5">
+            <div className="rounded-lg border border-ink/[0.08] bg-white p-5 shadow-soft">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-forest">Resumen técnico</p>
+              <div className="mt-4 grid gap-3">
+                {projectIncludes.slice(0, 4).map((item) => (
+                  <div key={item} className="flex gap-3 text-sm font-semibold leading-6 text-ink">
+                    <Check className="mt-1 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mobile-carousel mobile-carousel-mist no-scrollbar -mx-4 mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5">
               {highlights.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="min-w-[76vw] snap-start rounded-lg border border-ink/[0.08] bg-white p-5 shadow-soft sm:min-w-[44vw]">
+                  <div key={item.title} className="min-w-[70vw] snap-start rounded-lg border border-ink/[0.08] bg-white p-5 shadow-soft sm:min-w-[40vw]">
                     <Icon className="h-6 w-6 text-forest" aria-hidden="true" />
                     <h3 className="mt-3 font-black text-ink">{item.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-muted">{item.description}</p>
@@ -47,8 +63,10 @@ export function IncludesSection() {
                 );
               })}
             </div>
-            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {projectIncludes.slice(0, 8).map((item) => (
+            <CarouselHint label="Desliza para ver más puntos técnicos" />
+
+            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {projectIncludes.slice(4, 12).map((item) => (
                 <div
                   key={item}
                   className="rounded-lg border border-ink/[0.08] bg-white p-3 shadow-[0_10px_28px_rgba(7,16,13,0.06)]"
@@ -63,7 +81,7 @@ export function IncludesSection() {
             </p>
           </div>
 
-          <div className="hidden gap-3 sm:grid-cols-2 md:grid">
+          <Reveal className="hidden gap-3 sm:grid-cols-2 md:grid">
             {projectIncludes.map((item) => (
               <div
                 key={item}
@@ -75,7 +93,7 @@ export function IncludesSection() {
                 <span className="text-sm font-semibold leading-6 text-ink">{item}</span>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
