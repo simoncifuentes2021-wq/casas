@@ -76,6 +76,15 @@ export function Hero() {
               );
             })}
           </div>
+
+          <div className="mt-5 grid grid-cols-3 overflow-hidden rounded-lg border border-white/[0.12] bg-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.10)] backdrop-blur lg:hidden">
+            {heroStats.map((stat) => (
+              <div key={stat.label} className="border-r border-white/10 p-3 last:border-r-0">
+                <p className="text-sm font-black leading-5 text-white">{stat.value}</p>
+                <p className="mt-1 text-[11px] font-medium leading-4 text-white/[0.58]">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div

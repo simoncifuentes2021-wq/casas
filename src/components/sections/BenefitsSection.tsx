@@ -51,7 +51,7 @@ export function BenefitsSection() {
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
-                <article key={benefit.title} className="min-w-[78vw] snap-start rounded-lg border border-ink/[0.08] bg-warm p-5 shadow-soft">
+                <article key={benefit.title} className="min-w-[78vw] snap-start rounded-lg border border-ink/[0.08] bg-warm p-5 shadow-soft sm:min-w-[46vw]">
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-white text-forest shadow-sm">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </span>

@@ -39,7 +39,7 @@ export function IncludesSection() {
               {highlights.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="min-w-[76vw] snap-start rounded-lg border border-ink/[0.08] bg-white p-5 shadow-soft">
+                  <div key={item.title} className="min-w-[76vw] snap-start rounded-lg border border-ink/[0.08] bg-white p-5 shadow-soft sm:min-w-[44vw]">
                     <Icon className="h-6 w-6 text-forest" aria-hidden="true" />
                     <h3 className="mt-3 font-black text-ink">{item.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-muted">{item.description}</p>
@@ -47,7 +47,7 @@ export function IncludesSection() {
                 );
               })}
             </div>
-            <div className="mt-4 grid grid-cols-2 gap-3">
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {projectIncludes.slice(0, 8).map((item) => (
                 <div
                   key={item}

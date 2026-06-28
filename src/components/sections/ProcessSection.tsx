@@ -33,7 +33,7 @@ export function ProcessSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.04 }}
-                  className="min-w-[72vw] snap-start rounded-lg bg-white p-6 shadow-soft"
+                  className="min-w-[72vw] snap-start rounded-lg bg-white p-6 shadow-soft sm:min-w-[42vw]"
                 >
                   <span className="text-sm font-black text-brand">0{index + 1}</span>
                   <Icon className="mt-5 h-8 w-8 text-forest" aria-hidden="true" />

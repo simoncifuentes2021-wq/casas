@@ -15,8 +15,8 @@ export function ModelDetail({
 }) {
   return (
     <>
-      <section className="bg-ink pt-32 text-white">
-        <div className="container-page grid gap-10 pb-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <section className="bg-ink pt-28 text-white md:pt-32">
+        <div className="container-page grid gap-8 pb-14 md:gap-10 md:pb-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand">Modelo Casas BAE</p>
             <h1 className="mt-4 text-4xl font-black leading-tight text-balance md:text-6xl">{model.name}</h1>
@@ -28,7 +28,7 @@ export function ModelDetail({
               <p className="mt-3 text-sm leading-6 text-white/[0.65]">{valueNotice}</p>
             </div>
             <div className="mt-8">
-              <Button href={modelWhatsappUrl(model.name)} variant="light" className="px-7">
+              <Button href={modelWhatsappUrl(model.name)} variant="light" className="w-full px-7 sm:w-auto">
                 <MessageCircle className="h-4 w-4" aria-hidden="true" />
                 Cotizar este modelo
               </Button>
@@ -45,11 +45,11 @@ export function ModelDetail({
         </div>
       </section>
 
-      <section className="bg-warm py-16 md:py-20">
+      <section className="bg-warm py-14 md:py-20">
         <div className="container-page grid gap-8 lg:grid-cols-2">
           <article className="rounded-lg border border-ink/[0.08] bg-white p-6 shadow-soft md:p-7">
             <h2 className="text-2xl font-black text-ink">Características</h2>
-            <ul className="mt-6 grid gap-3">
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
               {model.features.map((feature) => (
                 <li key={feature} className="flex gap-3 text-sm font-semibold leading-6 text-ink">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-brand" aria-hidden="true" />
@@ -76,13 +76,25 @@ export function ModelDetail({
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-20">
+      <section className="overflow-hidden bg-white py-14 md:py-20">
         <div className="container-page">
           <div className="max-w-3xl">
             <p className="text-xs font-black uppercase tracking-[0.18em] text-forest">Ficha técnica</p>
             <h2 className="mt-3 text-3xl font-black text-ink md:text-4xl">Qué contempla</h2>
           </div>
-          <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+          <div className="no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
+            {projectIncludes.map((item) => (
+              <div key={item} className="min-w-[72vw] snap-start rounded-lg border border-ink/[0.08] bg-mist p-4 text-sm font-semibold leading-6 text-ink sm:min-w-[42vw]">
+                <span className="mb-3 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-white text-brand shadow-sm">
+                  <Check className="h-4 w-4" aria-hidden="true" />
+                </span>
+                <span className="block">{item}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-1 text-center text-xs font-semibold text-muted md:hidden">Desliza para ver la ficha técnica</p>
+
+          <div className="mt-8 hidden gap-3 md:grid md:grid-cols-2 lg:grid-cols-3">
             {projectIncludes.map((item) => (
               <div key={item} className="flex min-h-16 gap-3 rounded-lg border border-ink/[0.08] bg-mist p-4 text-sm font-semibold leading-6 text-ink">
                 <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-white text-brand shadow-sm">
@@ -95,7 +107,7 @@ export function ModelDetail({
         </div>
       </section>
 
-      <section className="bg-mist py-16 md:py-20">
+      <section className="bg-mist py-14 md:py-20">
         <div className="container-page">
           <div className="rounded-lg bg-deep p-8 text-white shadow-premium md:p-10">
             <h2 className="text-3xl font-black text-balance">¿Quieres adaptar este modelo?</h2>
@@ -103,7 +115,7 @@ export function ModelDetail({
               Cuéntanos qué cambios necesitas y revisamos contigo la factibilidad según terreno, distribución y terminaciones.
             </p>
             <div className="mt-7">
-              <Button href={modelWhatsappUrl(model.name)} variant="light" className="px-7">
+              <Button href={modelWhatsappUrl(model.name)} variant="light" className="w-full px-7 sm:w-auto">
                 Cotizar {model.name} <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Button>
             </div>
@@ -111,10 +123,17 @@ export function ModelDetail({
         </div>
       </section>
 
-      <section className="bg-warm py-16 md:py-20">
+      <section className="overflow-hidden bg-warm py-14 md:py-20">
         <div className="container-page">
           <h2 className="text-3xl font-black text-ink">Modelos relacionados</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
+            {related.map((item) => (
+              <div key={item.slug} className="min-w-[84vw] snap-start sm:min-w-[48vw]">
+                <ModelCard model={item} />
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 hidden gap-6 md:grid md:grid-cols-3">
             {related.map((item) => (
               <ModelCard key={item.slug} model={item} />
             ))}

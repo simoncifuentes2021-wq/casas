@@ -25,24 +25,24 @@ export function PersonalizationSection() {
             description="Una casa funciona mejor cuando responde a la vida real de quienes la habitan. Por eso revisamos contigo distribución, materialidad y terminaciones."
           />
           <div className="mt-8">
-            <Button href={whatsappUrl("Hola Casas BAE, quiero cotizar un proyecto personalizado. ¿Me pueden orientar?")}>
+            <Button href={whatsappUrl("Hola Casas BAE, quiero cotizar un proyecto personalizado. ¿Me pueden orientar?")} className="w-full sm:w-auto">
               Cotiza tu proyecto personalizado
             </Button>
           </div>
         </div>
         <div>
-          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 sm:hidden">
+          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
             {options.map((option, index) => {
               const Icon = [Ruler, Wrench, Palette, Trees][index % 4];
               return (
-                <div key={option} className="min-w-[68vw] snap-start rounded-lg border border-white/10 bg-white/[0.08] p-5 backdrop-blur">
+                <div key={option} className="min-w-[68vw] snap-start rounded-lg border border-white/10 bg-white/[0.08] p-5 backdrop-blur sm:min-w-[42vw]">
                   <Icon className="h-7 w-7 text-brand" aria-hidden="true" />
                   <h3 className="mt-4 font-bold">{option}</h3>
                 </div>
               );
             })}
           </div>
-          <div className="hidden gap-4 sm:grid sm:grid-cols-2">
+          <div className="hidden gap-4 md:grid md:grid-cols-2">
           {options.map((option, index) => {
             const Icon = [Ruler, Wrench, Palette, Trees][index % 4];
             return (

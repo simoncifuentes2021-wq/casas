@@ -15,10 +15,10 @@ export function ModelsSection({ limit }: { limit?: number }) {
           description="Cada modelo puede adaptarse según distribución, terreno y terminaciones. Los valores son referenciales desde."
         />
         <div className="mt-10 md:mt-12">
-          <div className="sm:hidden">
+          <div className="md:hidden">
             <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5">
               {visibleModels.map((model) => (
-                <div key={model.slug} className="min-w-[84vw] snap-start">
+                <div key={model.slug} className="min-w-[84vw] snap-start sm:min-w-[48vw]">
                   <ModelCard model={model} />
                 </div>
               ))}

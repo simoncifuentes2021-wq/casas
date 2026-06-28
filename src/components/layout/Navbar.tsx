@@ -25,9 +25,9 @@ export function Navbar() {
         scrolled ? "bg-ink/92 shadow-premium backdrop-blur" : "bg-ink/70 backdrop-blur-sm"
       }`}
     >
-      <nav className="container-page flex h-20 items-center justify-between gap-4 text-white">
+      <nav className="container-page flex min-h-[72px] items-center justify-between gap-3 py-3 text-white md:h-20 md:py-0">
         <Link href="/" className="flex items-center gap-3" aria-label="Casas BAE inicio">
-          <Logo className="h-auto w-[120px]" variant="light" />
+          <Logo className="h-auto w-[106px] sm:w-[120px]" variant="light" />
           <span className="leading-tight hidden sm:block">
             <span className="block text-base font-bold">Casas BAE</span>
             <span className="text-xs text-white/[0.65]">Victoria, La Araucanía</span>
@@ -47,7 +47,7 @@ export function Navbar() {
             href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden min-h-11 items-center gap-2 rounded-md bg-brand px-4 text-sm font-bold text-white transition hover:bg-[#789c3f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:inline-flex"
+            className="hidden min-h-11 items-center gap-2 rounded-md bg-brand px-4 text-sm font-bold text-white transition hover:bg-[#789c3f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:inline-flex"
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
             {siteConfig.phoneDisplay}

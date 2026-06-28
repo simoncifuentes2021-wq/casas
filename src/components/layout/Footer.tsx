@@ -12,7 +12,7 @@ export function Footer() {
         <div className="rounded-lg border border-white/10 bg-white/[0.06] p-6 shadow-premium md:p-8">
           <div className="grid gap-10 lg:grid-cols-[1.35fr_0.8fr_1fr]">
             <div>
-              <div className="mb-5 flex items-center gap-3">
+              <div className="mb-5 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                 <Logo className="h-auto w-[140px]" variant="light" />
                 <div>
                   <p className="font-black">Casas BAE</p>

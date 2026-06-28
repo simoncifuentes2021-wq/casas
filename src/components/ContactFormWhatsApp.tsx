@@ -20,7 +20,7 @@ export function ContactFormWhatsApp() {
   }
 
   return (
-    <form onSubmit={submit} className="rounded-lg bg-white p-6 shadow-soft">
+    <form onSubmit={submit} className="rounded-lg bg-white p-5 shadow-soft md:p-6">
       <div className="grid gap-4">
         <label className="grid gap-2 text-sm font-semibold text-ink">
           Nombre
@@ -79,7 +79,7 @@ export function ContactFormWhatsApp() {
       </div>
       <button
         type="submit"
-        className="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-brand px-5 py-3 text-sm font-bold text-white transition hover:bg-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+        className="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-brand px-5 py-3 text-sm font-bold text-white shadow-[0_14px_34px_rgba(107,142,50,0.24)] transition hover:-translate-y-0.5 hover:bg-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
       >
         <MessageCircle className="h-4 w-4" aria-hidden="true" />
         Enviar por WhatsApp

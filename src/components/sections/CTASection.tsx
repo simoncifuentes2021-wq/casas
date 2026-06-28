@@ -24,7 +24,7 @@ export function CTASection() {
             Cuéntanos el modelo que te interesa, dónde está tu terreno y qué cambios necesitas. Te orientamos por WhatsApp.
           </p>
           <div className="mt-8">
-            <Button href={whatsappUrl()} variant="light" className="px-7">
+            <Button href={whatsappUrl()} variant="light" className="w-full px-7 sm:w-auto">
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
               Cotizar por WhatsApp
             </Button>
