@@ -51,11 +51,11 @@ export function BenefitsSection() {
             })}
           </Reveal>
 
-          <div className="mobile-carousel mobile-carousel-white no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
+          <div className="mobile-carousel mobile-carousel-white no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8 md:hidden">
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
-                <article key={benefit.title} className="min-w-[74vw] snap-start rounded-lg border border-ink/[0.08] bg-warm p-5 shadow-soft sm:min-w-[42vw]">
+                <article key={benefit.title} className="min-w-[74%] snap-start rounded-lg border border-ink/[0.08] bg-warm p-5 shadow-soft sm:min-w-[42%]">
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-white text-forest shadow-sm">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </span>

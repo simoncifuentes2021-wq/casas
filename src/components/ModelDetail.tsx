@@ -96,9 +96,9 @@ export function ModelDetail({
             </div>
           </div>
 
-          <div className="mobile-carousel mobile-carousel-white no-scrollbar -mx-4 mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
+          <div className="mobile-carousel mobile-carousel-white no-scrollbar mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8 md:hidden">
             {projectIncludes.map((item) => (
-              <div key={item} className="min-w-[66vw] snap-start rounded-lg border border-ink/[0.08] bg-mist p-4 text-sm font-semibold leading-6 text-ink sm:min-w-[38vw]">
+              <div key={item} className="min-w-[66%] snap-start rounded-lg border border-ink/[0.08] bg-mist p-4 text-sm font-semibold leading-6 text-ink sm:min-w-[38%]">
                 <span className="mb-3 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-white text-brand shadow-sm">
                   <Check className="h-4 w-4" aria-hidden="true" />
                 </span>
@@ -140,9 +140,9 @@ export function ModelDetail({
       <section className="overflow-hidden bg-warm py-14 md:py-20">
         <div className="container-page">
           <h2 className="text-3xl font-black text-ink">Modelos relacionados</h2>
-          <div className="mobile-carousel no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
+          <div className="mobile-carousel no-scrollbar mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8 md:hidden">
             {related.map((item) => (
-              <div key={item.slug} className="min-w-[78vw] snap-start sm:min-w-[44vw]">
+              <div key={item.slug} className="min-w-[78%] snap-start sm:min-w-[44%]">
                 <ModelCard model={item} />
               </div>
             ))}

@@ -16,8 +16,8 @@ const options = [
 
 export function PersonalizationSection() {
   return (
-    <section id="personalizacion" className="overflow-hidden bg-deep py-16 text-white md:py-20">
-      <div className="container-page grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+    <section id="personalizacion" className="overflow-hidden bg-deep py-12 text-white md:py-20">
+      <div className="container-page grid min-w-0 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <Reveal>
           <SectionHeader
             align="left"
@@ -26,18 +26,18 @@ export function PersonalizationSection() {
             title="Tú eliges los detalles, nosotros los hacemos realidad"
             description="Una casa funciona mejor cuando responde a la vida real de quienes la habitan. Por eso revisamos contigo distribución, materialidad y terminaciones."
           />
-          <div className="mt-8">
+          <div className="mt-6">
             <Button href={whatsappUrl("Hola Casas BAE, quiero cotizar un proyecto personalizado. ¿Me pueden orientar?")} className="w-full sm:w-auto">
               Cotiza tu proyecto personalizado
             </Button>
           </div>
         </Reveal>
         <div>
-          <div className="mobile-carousel mobile-carousel-dark no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
+          <div className="mobile-carousel mobile-carousel-dark no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8 md:hidden">
             {options.map((option, index) => {
               const Icon = [Ruler, Wrench, Palette, Trees][index % 4];
               return (
-                <div key={option} className="min-w-[62vw] snap-start rounded-lg border border-white/10 bg-white/[0.08] p-5 backdrop-blur sm:min-w-[38vw]">
+                <div key={option} className="min-w-[66%] snap-start rounded-lg border border-white/10 bg-white/[0.08] p-4 backdrop-blur sm:min-w-[38%]">
                   <Icon className="h-7 w-7 text-brand" aria-hidden="true" />
                   <h3 className="mt-4 font-bold">{option}</h3>
                 </div>

@@ -16,7 +16,7 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        "mx-auto max-w-3xl",
+        "mx-auto max-w-3xl min-w-0",
         align === "center" ? "text-center" : "text-left",
       )}
     >
@@ -32,7 +32,7 @@ export function SectionHeader({
       ) : null}
       <h2
         className={cn(
-          "text-3xl font-bold leading-tight md:text-4xl",
+          "text-3xl font-bold leading-tight text-balance md:text-4xl",
           tone === "dark" ? "text-white" : "text-ink",
         )}
       >

@@ -24,7 +24,7 @@ export function ProcessSection() {
           description="Te guiamos paso a paso para que cada avance tenga sentido técnico, comercial y familiar."
         />
         <div className="mt-10 md:mt-12">
-          <div className="mobile-carousel no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 md:hidden">
+          <div className="mobile-carousel no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8 md:hidden">
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
@@ -34,7 +34,7 @@ export function ProcessSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.04 }}
-                  className="min-w-[68vw] snap-start rounded-lg bg-white p-6 shadow-soft sm:min-w-[40vw]"
+                  className="min-w-[68%] snap-start rounded-lg bg-white p-6 shadow-soft sm:min-w-[40%]"
                 >
                   <span className="text-sm font-black text-brand">0{index + 1}</span>
                   <Icon className="mt-5 h-8 w-8 text-forest" aria-hidden="true" />
