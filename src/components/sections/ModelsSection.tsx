@@ -19,7 +19,7 @@ export function ModelsSection({ limit }: { limit?: number }) {
           />
         </Reveal>
         <div className="mt-10 md:mt-12">
-          <div className="mobile-carousel md:hidden">
+          <div className="md:hidden">
             <div className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8">
               {visibleModels.map((model) => (
                 <div key={model.slug} className="min-w-[78%] snap-start sm:min-w-[44%]">

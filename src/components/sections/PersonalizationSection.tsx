@@ -33,7 +33,7 @@ export function PersonalizationSection() {
           </div>
         </Reveal>
         <div>
-          <div className="mobile-carousel mobile-carousel-dark no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8 md:hidden">
+          <div className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8 md:hidden">
             {options.map((option, index) => {
               const Icon = [Ruler, Wrench, Palette, Trees][index % 4];
               return (

@@ -51,7 +51,7 @@ export function BenefitsSection() {
             })}
           </Reveal>
 
-          <div className="mobile-carousel mobile-carousel-white no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8 md:hidden">
+          <div className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8 md:hidden">
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
               return (

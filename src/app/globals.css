@@ -71,39 +71,6 @@ select {
   display: none;
 }
 
-.mobile-carousel {
-  position: relative;
-}
-
-.mobile-carousel::after {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  bottom: 1.25rem;
-  right: 0;
-  top: 0;
-  width: 4.5rem;
-  background: linear-gradient(90deg, rgba(247, 247, 242, 0), rgba(247, 247, 242, 0.92));
-}
-
-.mobile-carousel-white::after {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.92));
-}
-
-.mobile-carousel-mist::after {
-  background: linear-gradient(90deg, rgba(243, 244, 240, 0), rgba(243, 244, 240, 0.92));
-}
-
-.mobile-carousel-dark::after {
-  background: linear-gradient(90deg, rgba(10, 42, 29, 0), rgba(10, 42, 29, 0.92));
-}
-
-@media (min-width: 768px) {
-  .mobile-carousel::after {
-    display: none;
-  }
-}
-
 .focus-ring {
   @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand;
 }

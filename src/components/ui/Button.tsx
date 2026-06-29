@@ -27,7 +27,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const shared = cn(
-    "inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4",
+    "inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-center text-sm font-bold leading-5 transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4",
     variants[variant],
     className,
   );

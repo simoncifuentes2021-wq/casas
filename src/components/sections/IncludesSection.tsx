@@ -51,7 +51,7 @@ export function IncludesSection() {
               </div>
             </div>
 
-            <div className="mobile-carousel mobile-carousel-mist no-scrollbar mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8">
+            <div className="no-scrollbar mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-8">
               {highlights.map((item) => {
                 const Icon = item.icon;
                 return (
